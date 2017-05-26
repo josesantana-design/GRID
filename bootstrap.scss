@@ -1,0 +1,35 @@
+@import "variables";
+@import "mixins";
+@import "reboot";
+
+.container {
+  max-width: 60em;
+  @include make-container();
+}
+.row {
+  @include make-row();
+}
+.content-main {
+  background-color: $brand-primary;
+  padding: 1em;
+  @include make-col-ready();
+
+  @media (max-width: 32em) {
+    @include make-col(6);
+  }
+  @media (min-width: 32.1em) {
+    @include make-col(8);
+  }
+}
+.content-secondary {
+  background-color: $brand-danger;
+  padding: 1em;
+  @include make-col-ready();
+
+  @media (max-width: 32em) {
+    @include make-col(6);
+  }
+  @media (min-width: 32.1em) {
+    @include make-col(4);
+  }
+}
